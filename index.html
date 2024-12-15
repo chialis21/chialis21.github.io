@@ -10,27 +10,60 @@
             line-height: 1.6;
             margin: 0;
             padding: 0;
-            text-align: center;
             background-color: #f4f4f9;
         }
         header {
             background: #333;
             color: #fff;
             padding: 1rem 0;
+            text-align: center;
         }
         header h1 {
             margin: 0;
         }
         main {
+            margin-left: 25%;
             padding: 2rem;
         }
         footer {
             background: #333;
             color: #fff;
             padding: 1rem 0;
+            text-align: center;
             position: fixed;
             bottom: 0;
             width: 100%;
+        }
+        .sidebar {
+            width: 25%;
+            background: #444;
+            color: #fff;
+            position: fixed;
+            height: 100%;
+            top: 0;
+            left: 0;
+            overflow-x: hidden;
+            padding-top: 1rem;
+            display: none; /* Hidden by default */
+        }
+        .sidebar a {
+            padding: 1rem;
+            display: block;
+            color: #fff;
+            text-decoration: none;
+        }
+        .sidebar a:hover {
+            background: #575757;
+        }
+        .open-btn {
+            background: #333;
+            color: #fff;
+            padding: 1rem;
+            border: none;
+            cursor: pointer;
+            position: fixed;
+            top: 1rem;
+            left: 1rem;
         }
     </style>
 </head>
@@ -38,27 +71,32 @@
     <header>
         <h1>Welcome to My Website</h1>
     </header>
+
+    <button class="open-btn" onclick="w3_open()">☰ Open Sidebar</button>
+
+    <div id="mySidebar" class="sidebar">
+        <a href="javascript:void(0)" onclick="w3_close()">× Close Sidebar</a>
+        <a href="#">Link 1</a>
+        <a href="#">Link 2</a>
+        <a href="#">Link 3</a>
+    </div>
+
     <main>
         <p>Hello! This is my GitHub Pages site. Here, I can share anything I want, such as projects, blog posts, or personal information.</p>
     </main>
+
     <footer>
         <p>&copy; 2024 Chiara Lisotti</p>
     </footer>
+
+    <script>
+        function w3_open() {
+            document.getElementById("mySidebar").style.display = "block";
+        }
+
+        function w3_close() {
+            document.getElementById("mySidebar").style.display = "none";
+        }
+    </script>
 </body>
-<div class="w3-sidebar w3-bar-block" style="width:25%">
-  <a href="#" class="w3-bar-item w3-button">Link 1</a>
-  <a href="#" class="w3-bar-item w3-button">Link 2</a>
-  <a href="#" class="w3-bar-item w3-button">Link 3</a>
-</div>
-
-<div style="margin-left:25%">
-... page content ...
-</div>
-function w3_open() {
-  document.getElementById("mySidebar").style.display = "block";
-}
-
-function w3_close() {
-  document.getElementById("mySidebar").style.display = "none";
-}
 </html>
